@@ -49,12 +49,18 @@
 
                 <!-- Users: subUsers -->
                 <ul id="subUsers" class="side-nav-menu side-nav-menu-second-level mb-0">
-                    <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="#">All Users</a>
-                    </li>
-                    <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="#">Add new</a>
-                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="side-nav-menu-item">
+                            <a class="side-nav-menu-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="side-nav-menu-item">
+                            <a class="side-nav-menu-link" href="{% url 'account_signup' %}">Signup</a>
+                        </li>
+                        <li class="side-nav-menu-item">
+                            <a class="side-nav-menu-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                    {% endif %}
                 </ul>
                 <!-- End Users: subUsers -->
             </li>
