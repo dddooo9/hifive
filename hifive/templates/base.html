@@ -36,13 +36,19 @@
 
             <!-- Logo For Desktop View -->
             <a class="navbar-brand navbar-brand-desktop" href="/">
-                <img class="side-nav-show-on-closed" src="{% static 'public/img/logo-mini.png' %}" alt="Graindashboard" style="width: auto; height: 33px;">
-                <img class="side-nav-hide-on-closed" src="{% static 'public/img/logo.png' %}" alt="Graindashboard" style="width: auto; height: 33px;">
+<!--                <img class="side-nav-show-on-closed" src="{% static 'public/img/logo-mini.png' %}" alt="Graindashboard" style="width: auto; height: 33px;">-->
+
+                <div>
+                    <img class="side-nav-hide-on-closed" src="{% static 'public/img/nbm.png' %}" alt="Graindashboard" style="width: 70px; height: 70px; float: left; ">
+                    <p class = "logo-title">
+                        눈바디스마트미러
+                    </p>
+                </div>
             </a>
             <!-- End Logo For Desktop View -->
         </div>
 
-        <div class="header-content col px-md-3">
+        <div class="header-content col px-md-3" id="header-content">
             <div class="d-flex align-items-center">
                 <!-- Side Nav Toggle -->
                 <a  class="js-side-nav header-invoker d-flex mr-md-2" href="#"
