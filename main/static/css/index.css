@@ -1,0 +1,29 @@
+
+.title-text{
+    text-align: center;
+    margin:30px;
+}
+.introduction_title{
+    font-size: 45px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.mirror_img{
+    width: 1110px;
+    height: 600px;
+}
+/*.logo{*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*}*/
+.introduction_top{
+    text-align: center;
+}
+.introduction_content{
+    text-align: justify;
+    margin: auto 170px auto 170px;
+}
+.introduction_img{
+    display : block;
+    margin : 0px auto 20px auto;
+}

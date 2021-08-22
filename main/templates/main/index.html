@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
@@ -8,20 +9,19 @@
 
 
 <body>
-
     <div class="container my-3">
         <img src ="https://postfiles.pstatic.net/MjAyMTA3MTdfMTQg/MDAxNjI2NDQ4MDEzNzg0.jl3ZdnTPyG-eYN8BKtYaaiV0ol6QdxXgh0YklMK3JVYg.KlYO-_QuWwQjhVc2OsW6_UvaUV_ru06VBa3vvpEY3iMg.PNG.skawjdska235/facebook_cover_photo_1.png?type=w773" width="1110">
         <h1 class="title-text" style="font-size:50px">눈바디 스마트미러에 오신 것을 환영합니다!</h1>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src ="https://funshop.akamaized.net/abroad/027/13713/Ayi%20Smart%20mirror%203_1.jpg" class="mirror"alt="first slide">
+                    <img class="mirror_img" src ="https://funshop.akamaized.net/abroad/027/13713/Ayi%20Smart%20mirror%203_1.jpg" alt="first slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="https://t1.daumcdn.net/liveboard/bizion/cd26d7d0580e4b848a3e887c550030e9.JPG" alt="Second slide">
+                    <img class="mirror_img" src="https://t1.daumcdn.net/liveboard/bizion/cd26d7d0580e4b848a3e887c550030e9.JPG" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="https://image.ajunews.com/content/image/2020/07/12/20200712172022555148.png" alt="Third slide">
+                    <img class="mirror_img" src="https://image.ajunews.com/content/image/2020/07/12/20200712172022555148.png"alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -34,14 +34,14 @@
             </a>
         </div>
     </div>
-    <div>
+    <div class="introduction">
         <div>
-            <div class="top">
-                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA3MjdfMTc0/MDAxNjI3MzYzMDAyODQw.fobERqewZgDhGtz0a4zUMO8pANxOQdKJ7F974EaagRwg.CwWRk4nG4LxnyQcvYeMF_KN60W4eob9l6sl1qmr_0vAg.PNG.jeeyulee98/1627362922964.png?type=w800" alt="..." class="logo">
-                <h1 class="title">스마트미러란</h1>
+            <div class="introduction_top">
+<!--                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA3MjdfMTc0/MDAxNjI3MzYzMDAyODQw.fobERqewZgDhGtz0a4zUMO8pANxOQdKJ7F974EaagRwg.CwWRk4nG4LxnyQcvYeMF_KN60W4eob9l6sl1qmr_0vAg.PNG.jeeyulee98/1627362922964.png?type=w800" alt="..." class="logo">-->
+                <h1 class="introduction_title">스마트미러란</h1>
             </div>>
-            <div class="text">
-                <img src="https://funshop.akamaized.net/abroad/027/13713/Ayi%20Smart%20mirror%203_1.jpg" alt="..." class="main_img">
+            <div class="introduction_content">
+                <img src="https://funshop.akamaized.net/abroad/027/13713/Ayi%20Smart%20mirror%203_1.jpg" alt="..." class="introduction_img">
                 <h2 class="following">스마트미러는 단순한 거울이 아닙니다. 언제든 거울로써 활용이 가능한 기능 제공됨과 동시에 눈바디를 확인할 수 있습니다.
                     집에서 언제든지 간편하게 체형을 측정하고, 분석 정보를 받아볼 수 있습니다.
                     스마트미러는 웹페이지로 연결되어 <span style="color:mediumblue">체형 정보, 추천 운동, 운동 캘린더</span>등의 정보를 제공합니다.
@@ -49,9 +49,7 @@
                 </h2>
             </div>
         </div>
-
     </div>
-    <hr>
     {% endblock %}
 </body>
 
