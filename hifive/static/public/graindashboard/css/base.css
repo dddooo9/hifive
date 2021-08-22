@@ -2,3 +2,14 @@
 *{
     font-family: 'Do Hyeon', sans-serif;
 }
+.logo-title{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding-top: 20px;
+    font-size: 35px;
+    color: darkblue;
+}
+
+.header-content{
+    margin-left: 50px;
+}
