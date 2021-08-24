@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'public/graindashboard/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'public/css/base.css' %}">
 
 
     <!-- Favicon -->
@@ -15,7 +15,7 @@
 
 
     <!-- DEMO CHARTS -->
-    <link rel="stylesheet" href="{% static 'public//demo/chartist.css' %}">
+    <link rel="stylesheet" href="{% static 'public/demo/chartist.css' %}">
     <link rel="stylesheet" href="{% static 'public/demo/chartist-plugin-tooltip.css' %}">
 
     <!-- Template -->
@@ -39,7 +39,8 @@
 <!--                <img class="side-nav-show-on-closed" src="{% static 'public/img/logo-mini.png' %}" alt="Graindashboard" style="width: auto; height: 33px;">-->
 
                 <div>
-                    <img class="side-nav-hide-on-closed" src="{% static 'public/img/nbm.png' %}" alt="Graindashboard" style="width: 70px; height: 70px; float: left; ">
+                    <img class="logo-img" src="{% static 'public/img/nbm.png' %}" alt="Graindashboard"
+                    style="width: 70px; height: 70px; float: left; ">
                     <p class = "logo-title">
                         눈바디스마트미러
                     </p>
@@ -48,7 +49,7 @@
             <!-- End Logo For Desktop View -->
         </div>
 
-        <div class="header-content col px-md-3" id="header-content">
+        <div class="header-content col px-md-3" style="margin-left: 210px">
             <div class="d-flex align-items-center">
                 <!-- Side Nav Toggle -->
                 <a  class="js-side-nav header-invoker d-flex mr-md-2" href="#"
@@ -59,13 +60,13 @@
                 </a>
                 <!-- End Side Nav Toggle -->
 
-                
+                {% if user.is_authenticated %}
                 <!-- User Avatar -->
                 <div class="dropdown mx-3 dropdown ml-2">
                     <a id="profileMenuInvoker" class="header-complex-invoker" href="#" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#profileMenu" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
                         <!--img class="avatar rounded-circle mr-md-2" src="#" alt="John Doe"-->
                         <span class="mr-md-2 avatar-placeholder">J</span>
-                        <span class="d-none d-md-block">John Doe</span>
+                        <span class="d-none d-md-block">{{request.user}}</span>
                         <i class="gd-angle-down d-none d-md-block ml-2"></i>
                     </a>
 
@@ -90,6 +91,8 @@
                 </div>
                 <!-- End User Avatar -->
             </div>
+            {% else %}
+            {% endif %}
         </div>
     </nav>
 </header>

@@ -1,0 +1,13 @@
+h1{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+}
+.login-main{
+    margin: auto;
+    padding-right: 280px;
+    padding-bottom : 65px;
+}
