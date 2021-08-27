@@ -2,8 +2,53 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+<link rel="stylesheet" href="{% static 'css/page.css' %}">
+<div class="page-main">
+    <h1>My page</h1>
+    <hr>
+    <h2 class="Profile">{{request.user}}님 회원정보</h2>
+    <div style="float:right">
+        <div class="physique">
+            <h5>최초체형</h5>
+            <img src="https://postfiles.pstatic.net/MjAyMTA3MzFfMjYy/MDAxNjI3NzAwOTI2OTYw.Xajzr6Xx4ps7lgW6qpG0FBamkaI_Bkdo1j3GQsgQ2Jog.Zuzbx3MVNn90btzG8fmWWpOQBbNnORFq7wfavaWeMKog.JPEG.skawjdska235/%EC%B2%B4%ED%98%95.jpg?type=w773">
+        </div>
+        <div class ="posture">
+            <h5>최초자세</h5>
+            <img src="https://postfiles.pstatic.net/MjAyMTA3MzFfMzMg/MDAxNjI3NzAwOTI2OTY1.n-wWJM4HF1Ej9F3fLPCbKr_ykppOaPgnkA15dgVCgRMg.jn6H4d-iCEJmLdrw7RweRUAFFSMMperIKjBKzN87Lukg.JPEG.skawjdska235/%EC%9E%90%EC%84%B8.jpg?type=w773">
+        </div>
 
-<h1>My page</h1>
+        <div style="float:left" >
+            <table class="table">
+                <thead>
+                <tr>
 
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>{{ request.user }}</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Singup Date</td>
+                    <td>{{ request.user.date_joined }}</td>
+                </tr>
+                <tr>
+                    <td>Height</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    <img class="nbm_tail" src="\static\public\img\nbm_tail.png">
 {% endblock%}

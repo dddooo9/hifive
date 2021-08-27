@@ -1,0 +1,32 @@
+.main{
+    flex-direction: column;
+}
+h2,h1{
+    text-align: center;
+    margin: 20px auto 30px auto;
+}
+.posture{
+    float:right;
+    margin-right: 50px;
+}
+.physique{
+    float:right;
+    margin-right: 400px;
+}
+.table{
+    width: 400px;
+    font-size: 20px;
+}
+
+.table{
+    margin-right: 100px;
+    margin-top: 50px
+}
+img{
+    width: 150px;
+}
+.nbm_tail{
+    margin: 50px auto 20px auto;
+    width: 1500px;
+    height: 300px;
+}
