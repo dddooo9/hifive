@@ -8,9 +8,9 @@
             <li class="sidebar-heading h6">Private Service</li>
             <!-- End Title -->
 
-            <!-- Dashboard -->
-            <li class="side-nav-menu-item active">
-                <a class="side-nav-menu-link media align-items-center" href="exercise">
+            <!-- Dashboard  active 삭제-->
+            <li class="side-nav-menu-item">
+                <a class="side-nav-menu-link media align-items-center" href="{% url 'users:exercise' %}">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-dashboard"></i>
               </span>
@@ -21,7 +21,7 @@
 
             <!-- Documentation -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="mypage">
+                <a class="side-nav-menu-link media align-items-center" href="{% url 'users:mypage' %}">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-file"></i>
               </span>

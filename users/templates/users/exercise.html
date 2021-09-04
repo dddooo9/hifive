@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+{% for camera in camera%}
+<h2>촬영일 : {{ camera.date }}</h2>
+<h3>면적 : {{ camera.outline_area }}</h3>
+
+<img src="data:image/jpg;base64,{{camera.basic_img}}" width="200px">
+<img src="data:image/jpg;base64,{{camera.outline_img}}" width="200px">
+<img src="data:image/jpg;base64,{{camera.joint_img}}" width="200px">
+{% endfor %}
+
+</div>
+{% endblock %}

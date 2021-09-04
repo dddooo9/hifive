@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'main',
+    'users',
     
     'django.contrib.sites',
     'allauth',
@@ -165,3 +166,5 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
+
+ACCOUNT_FORMS = {'signup': 'users.forms.MyCustomSignupForm'}
