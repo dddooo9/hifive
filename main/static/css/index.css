@@ -3,7 +3,7 @@
     text-align: center;
     margin:30px;
 }
-.introduction_title{
+.introduction_title {
     font-size: 45px;
     padding-top: 30px;
     padding-bottom: 20px;
@@ -27,3 +27,21 @@
     display : block;
     margin : 0px auto 20px auto;
 }
+.banner_top{
+    width: 1100px;
+    height: 380px;
+}
+@media screen and (max-width:800px) {
+    h2{
+        font-size: 20px;
+        margin: auto;
+    }
+    .introduction_title{
+        font-size: 40px;
+    }
+    .introduction_img{
+        display : none;
+        margin : 0px auto 20px auto;
+    }
+}
+
