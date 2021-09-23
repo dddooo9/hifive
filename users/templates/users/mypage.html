@@ -31,19 +31,23 @@
                 </tr>
                 <tr>
                     <td>Name</td>
-                    <td></td>
+                    <td>{{ request.user.profile.name }}</td>
                 </tr>
                 <tr>
-                    <td>Singup Date</td>
+                    <td>Signup Date</td>
                     <td>{{ request.user.date_joined }}</td>
                 </tr>
                 <tr>
                     <td>Height</td>
-                    <td></td>
+                    <td>{{ request.user.profile.height }}</td>
                 </tr>
                 <tr>
                     <td>Weight</td>
-                    <td></td>
+                    <td>{{ request.user.profile.weight }}</td>
+                </tr>
+                <tr>
+                    <td>Device PinNumber</td>
+                    <td>{{ request.user.profile.device_pw }}</td>
                 </tr>
                 </tbody>
             </table>
