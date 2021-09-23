@@ -6,30 +6,30 @@
 
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'public/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'public/css/login.css' %}">
 
-<section class="login-main main">
-<div class="center_change">
-  <h1 class="text_center">{% trans "Sign In" %}</h1>
+    <section class="login-main main">
+        <div class="center_change">
+            <h1 class="text_center">{% trans "Sign In" %}</h1>
 
-  <p class="text_center">
-    {% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-  </p>
+            <p class="text_center">
+                {% blocktrans %}If you have not created an account yet, then please
+                    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+            </p>
 
-  <form class="login" method="POST" action="{% url 'account_login' %}">
-    <div class="login_form">
-      {% csrf_token %}
-      {{ form.as_p }}
-      {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-      {% endif %}
-      <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-    </div>
-    <button class="primaryAction btn1 btn_center" type="submit">{% trans "Sign In" %}</button>
-  </form>
-</div>
-</section>
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+                <div class="login_form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                </div>
+                <button class="primaryAction btn1 btn_center" type="submit">{% trans "Sign In" %}</button>
+            </form>
+        </div>
+    </section>
 
 
 {% endblock %}

@@ -14,7 +14,7 @@ h1{
 
 @media (max-width: 800px) {
     .center_change {
-        font-size: 15px;
+        font-size: 80px;
         position: absolute; left: 50%; top: 50%;
         transform: translate(-50%, -50%);
     }
