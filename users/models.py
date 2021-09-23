@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
-
+from django.core.validators import MinLengthValidator
 
 class Camera(models.Model):
     date = models.DateField(null=True)
@@ -19,6 +19,7 @@ class Profile(models.Model):
     age = models.IntegerField(null=True)
     height = models.IntegerField(null=True)
     weight = models.IntegerField(null=True)
+    device_pw = models.CharField(max_length=4, validators=[MinLengthValidator(4)], default="0000")
 
 
 @receiver(post_save, sender=User)
