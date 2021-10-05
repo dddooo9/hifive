@@ -4,6 +4,6 @@ register = template.Library()
 
 
 @register.filter
-def sub(before, after):
-    return before - after
-
+def index(indexable, i):
+    b = str(indexable)
+    return b[i]

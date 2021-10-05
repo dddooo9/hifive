@@ -9,15 +9,16 @@ import base64
 def exercise(request):
     profile = Profile.objects.get(user = request.user)
     cameras = Camera.objects.filter(user = request.user)
-    length = str(cameras)
+    length = len(cameras)
     recent = cameras.last()
     first = cameras.first()
-
     context = {
         'profile': profile,
-        'camera': cameras,
+        'cameras': cameras,
         'recent': recent,
         'first': first,
+        'length': length,
+
     }
     return render(request, 'users/exercise.html', context)
 

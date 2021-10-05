@@ -6,7 +6,11 @@
 <div class="content">
     <div class="py-4 px-3 px-md-4">
     <div class="mb-3 mb-md-4 d-flex justify-content-between">
-        <div class="h3 mb-0">{{request.user}}님의 측정 기록</div>
+        <div class="h3 mb-0">{{request.user}}님의 측정 기록
+        {% for camera in cameras %}
+            {{camera.outline_area|index:forloop.counter}}
+        {% endfor %}
+        </div>
 
     </div>
     <div class="photo">
@@ -242,10 +246,12 @@
                             </thead>
                             <tbody>
                             <tr>
-                                    <td class="py-3">{{ recent.date }}</td>
+                                {% for camera in cameras %}
+                                    <td class="py-3">{{camera.date|slice:":length"}}</td>
                                     <td class="py-3">
-                                    <div>{{ recent.outline_area }}</div>
-                                </td>
+                                    <div>{{camera.outline_area|slice:":length"}}</div>
+                                    </td>
+                                {% endfor %}
 
                                 <td class="py-3">
                                     <span class="badge badge-pill badge-warning">유지</span>
