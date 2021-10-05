@@ -17,7 +17,6 @@ def exercise(request):
         'cameras': cameras,
         'recent': recent,
         'first': first,
-        'length': length,
 
     }
     return render(request, 'users/exercise.html', context)

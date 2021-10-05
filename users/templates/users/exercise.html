@@ -7,9 +7,6 @@
     <div class="py-4 px-3 px-md-4">
     <div class="mb-3 mb-md-4 d-flex justify-content-between">
         <div class="h3 mb-0">{{request.user}}님의 측정 기록
-        {% for camera in cameras %}
-            {{camera.outline_area|index:forloop.counter}}
-        {% endfor %}
         </div>
 
     </div>
@@ -66,171 +63,60 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6 col-xl-4 mb-3 mb-md-4">
+            <div class="card h-100">
+                    <div class="card-header d-flex">
+                        <h3 class="h4 font-weight-semi-bold text-uppercase mb-0">처음과의 차이</h3>
+                    </div>
+                <div class="card-body p-0">
+                        <div class="media align-items-center px-3 px-md-4 mb-3 mb-md-4">
+                            <div class="media-body">
+                                <h4 class="h3 lh-1 mb-2">변화 </h4>
+                                <p class="small text-muted mb-0"> Change
+                                </p>
+                            </div>
+                        </div>
 
 
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <!-- Card -->
-            <div class="card mb-3 mb-md-4">
-                <div class="card-header border-bottom p-0">
-                    <ul id="wallets" class="nav nav-v2 nav-primary nav-justified d-block d-xl-flex w-100" role="tablist">
-                        <li class="nav-item border-bottom border-xl-bottom-0">
-                            <a class="nav-link d-flex align-items-center py-2 px-3 p-xl-4 active" href="#bitcoin" role="tab" aria-selected="true"
-                                data-toggle="tab">
-                                <span>처음과 비교</span>
-                            </a>
-                        </li>
-                        <li class="nav-item border-bottom border-xl-bottom-0 border-xl-left">
-                            <a class="nav-link d-flex align-items-center py-2 px-3 p-xl-4" href="#bitcoinCash" role="tab" aria-selected="false"
-                                data-toggle="tab">
-                                <span>가장 최근과 비교</span>
-                            </a>
-                        </li>
-
-                    </ul>
                 </div>
-                <div id="walletsContent" class="card-body tab-content">
-                    <div class="tab-pane fade show active" id="bitcoin" role="tabpanel">
-                        <div class="row text-center">
-                            <div class="col-6 col-md-4 mb-3 mb-md-0">
-                                <div class="h3 mb-0">
-                                    {{ first.outline_area}}
-                                </div>
-                                <small class="text-muted">First</small>
-                            </div>
-
-                            <div class="col-6 col-md-4 mb-3 mb-md-0 border-left">
-                                <div class="h3 mb-0">
-                                    <span class="text-success"></span>{{ recent.outline_area }}
-                                </div>
-                                <small class="text-muted">Now</small>
-                            </div>
-
-                            <div class="col-12 col-md-4 border-left">
-                                <div class="h3 mb-0">
-                                    <span class="text-success"></span>
-
-                                </div>
-                                <small class="text-muted">Change</small>
-                            </div>
-                        </div>
-
-                        <div class="js-area-chart chart chart--axis-x--nowrap chart--points-invisible position-relative mh-15_6 safari-overflow-hidden pt-4 pt-md-5 pb-1"
-                                data-series='[
-                    [
-                        {"meta":"{{ first.date }}","value":"{{ first.outline_area }}"},
-                        {"meta":"{{ recent.date }}","value":"{{ recent.outline_area }}"}
-                    ]
+                 <div class="js-area-chart chart chart--axis-x chart--points-invisible position-relative chart--labels-hidden"
+                            data-series='[
+                        [
+                        {"meta":"Orders","value":"{{ first.outline_area }}"},
+                        {"meta":"Orders","value":"{{ recent.outline_area }}"}
+                        ]
                     ]'
-                                data-labels='["First","Now"]'
-                                data-labels-qty="2"
-                                data-labels-start-from="1"
-                                data-prefix=""
-                                data-height="250"
-                                data-mobile-height="75"
-                                data-high="700000"
-                                data-low="600000"
-                                data-offset-x="30"
-                                data-offset-y="60"
-                                data-is-line-smooth='[false]'
-                                data-line-width='["1px"]'
-                                data-line-colors='["#8069f2"]'
-                                data-fill-opacity="1"
-                                data-fill-colors='["#ecebfa"]'
-                                data-text-size-x="14px"
-                                data-text-color-x="#4a4e69"
-                                data-text-offset-top-x="10"
-                                data-text-align-axis-x="center"
-                                data-text-size-y="14px"
-                                data-text-color-y="#868e96"
-                                data-is-show-tooltips="true"
-                                data-is-tooltip-divided="true"
-                                data-tooltip-custom-class="chart-tooltip--divided chart-tooltip__value--bg-black chart-tooltip__meta--bg-primary small text-white"
-                                data-is-show-points="true"
-                                data-point-custom-class='chart__point--donut chart__point--has-line-helper chart__point--border-xxs border-primary rounded-circle'
-                                data-point-dimensions='{"width":8,"height":8}'></div>
-                    </div>
-
-                    <div class="tab-pane fade" id="bitcoinCash" role="tabpanel">
-                        <div class="row text-center">
-                            <div class="col-6 col-md-4 mb-3 mb-md-0">
-                                <div class="h3 mb-0">
-                                    Data
-                                </div>
-                                <small class="text-muted">Before</small>
-                            </div>
-
-                            <div class="col-6 col-md-4 mb-3 mb-md-0 border-left">
-                                <div class="h3 mb-0">
-                                    {{ recent.outline_area }}
-                                </div>
-                                <small class="text-muted">Now</small>
-                            </div>
-
-                            <div class="col-12 col-md-4 border-left">
-                                <div class="h3 mb-0">
-                                    <span class="text-danger"></span>
-                                </div>
-                                <small class="text-muted">Change</small>
-                            </div>
-                        </div>
-
-                        <div class="js-area-chart chart chart--axis-x--nowrap chart--points-invisible position-relative mh-15_6 safari-overflow-hidden pt-4 pt-md-5 pb-1"
-                                data-series='[
-                    [
-                        {"meta":"6/01/2019 9:00 PM","value":"900"},
-
-                        {"meta":"6/13/2019 9:00 PM","value":"1300"},
-                        {"meta":"6/14/2019 9:00 PM","value":"1400"},
-                        {"meta":"6/15/2019 9:00 PM","value":"1300"},
-                        {"meta":"6/16/2019 9:00 PM","value":"1200"},
-                        {"meta":"6/17/2019 9:00 PM","value":"1600"},
-                        {"meta":"6/30/2019 9:00 PM","value":"1950"}
-                    ]
+                            data-height="100"
+                            data-high="700000"
+                            data-is-line-smooth='[false]'
+                            data-line-width='["1px"]'
+                            data-line-colors='["#8069f2"]'
+                            data-fill-opacity=".3"
+                            data-is-fill-colors-gradient="true"
+                            data-fill-colors='[
+                        ["rgba(128,105,242,.7)","rgba(255,255,255,.6)"]
                     ]'
-                                data-labels='["1","2","3"]'
-                                data-labels-qty="3"
-                                data-labels-start-from="1"
-                                data-prefix=""
-                                data-height="250"
-                                data-mobile-height="75"
-                                data-high="3000"
-                                data-low="500"
-                                data-offset-x="30"
-                                data-offset-y="60"
-                                data-is-line-smooth='[false]'
-                                data-line-width='["1px"]'
-                                data-line-colors='["#8069f2"]'
-                                data-fill-opacity="1"
-                                data-fill-colors='["#ecebfa"]'
-                                data-text-size-x="14px"
-                                data-text-color-x="#4a4e69"
-                                data-text-offset-top-x="10"
-                                data-text-align-axis-x="center"
-                                data-text-size-y="14px"
-                                data-text-color-y="#868e96"
-                                data-is-show-tooltips="true"
-                                data-is-tooltip-divided="true"
-                                data-tooltip-custom-class="chart-tooltip--divided chart-tooltip__value--bg-black chart-tooltip__meta--bg-primary small text-white"
-                                data-is-show-points="true"
-                                data-point-custom-class='chart__point--donut chart__point--has-line-helper chart__point--border-xxs border-primary rounded-circle'
-                                data-point-dimensions='{"width":8,"height":8}'></div>
-                    </div>
-
-
+                            data-is-show-tooltips="true"
+                            data-is-tooltips-append-to-body="true"
+                            data-tooltip-custom-class="chart-tooltip chart-tooltip--sections-blocked chart-tooltip__meta--text-muted small text-white p-2"
+                            data-tooltip-currency="Qty "
+                            data-is-show-points="true"
+                            data-point-custom-class='chart__point--donut chart__point--border-xxs border-primary rounded-circle'
+                            data-point-dimensions='{"width":8,"height":8}'></div>
 
                 </div>
             </div>
-            <!-- End Card -->
         </div>
+
+
     </div>
+
+
 
         <div class="col-12">
             <div class="card mb-3 mb-md-4">
                 <div class="card-header">
-                    <h3 class="font-weight-semi-bold mb-0">최근 면적 기록</h3>
+                    <h3 class="font-weight-semi-bold mb-0">면적 기록</h3>
                 </div>
 
                 <div class="card-body pt-0">
@@ -240,22 +126,20 @@
                             <tr>
                                 <th class="font-weight-semi-bold border-top-0 py-2">측정 날짜</th>
                                 <th class="font-weight-semi-bold border-top-0 py-2">면적</th>
-                                <th class="font-weight-semi-bold border-top-0 py-2">평가</th>
                                 <th class="font-weight-semi-bold border-top-0 py-2">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                {% for camera in cameras %}
-                                    <td class="py-3">{{camera.date|slice:":length"}}</td>
-                                    <td class="py-3">
-                                    <div>{{camera.outline_area|slice:":length"}}</div>
-                                    </td>
-                                {% endfor %}
 
-                                <td class="py-3">
+                                    <td class="py-3">{{ recent.date }}</td>
+                                    <td class="py-3">
+                                    <div>{{ recent.outline_area }}</div>
+                                    </td>
+
+                                <!--<td class="py-3">
                                     <span class="badge badge-pill badge-warning">유지</span>
-                                </td>
+                                </td>-->
                                 <td class="py-3">
                                     <div class="position-relative">
                                         <a id="dropDown16Invoker" class="link-dark d-flex" href="#" aria-controls="dropDown16" aria-haspopup="true" aria-expanded="false" data-unfold-target="#dropDown16" data-unfold-event="click" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
@@ -280,12 +164,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="py-3">149531</td>
+                                <td class="py-3">{{ first.date }}</td>
                                 <td class="py-3">
-                                    <div>Data</div>
-                                    <div class="text-muted">Acme Inc.</div>
+                                    <div>{{ first.outline_area }}</div>
                                 </td>
-                                <td class="py-3">
+                                <!--<td class="py-3">
                                     <span class="badge badge-pill badge-success">감소</span>
                                 </td>
                                 <td class="py-3">
@@ -309,39 +192,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="py-3">149531</td>
-                                <td class="py-3">
-                                    <div>Data</div>
-                                </td>
-                                <td class="py-3">
-                                    <span class="badge badge-pill badge-danger">증가</span>
-                                </td>
-                                <td class="py-3">
-                                    <div class="position-relative">
-                                        <a id="dropDown13Invoker" class="link-dark d-flex" href="#" aria-controls="dropDown13" aria-haspopup="true" aria-expanded="false" data-unfold-target="#dropDown13" data-unfold-event="click" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
-                                            <i class="gd-more-alt icon-text"></i>
-                                        </a>
-
-                                        <ul id="dropDown13" class="unfold unfold-light unfold-top unfold-right position-absolute py-3 mt-1 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="dropDown13Invoker" style="min-width: 150px; animation-duration: 300ms; right: 0px;">
-                                            <li class="unfold-item">
-                                                <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                    <i class="gd-pencil unfold-item-icon mr-3"></i>
-                                                    <span class="media-body">Edit</span>
-                                                </a>
-                                            </li>
-                                            <li class="unfold-item">
-                                                <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                    <i class="gd-close unfold-item-icon mr-3"></i>
-                                                    <span class="media-body">Delete</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
+                                </td>-->
                             </tr>
 
                             </tbody>
