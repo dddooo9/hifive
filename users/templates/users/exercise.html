@@ -5,202 +5,181 @@
 
 <div class="content">
     <div class="py-4 px-3 px-md-4">
-    <div class="mb-3 mb-md-4 d-flex justify-content-between">
-        <div class="h3 mb-0">{{request.user}}님의 측정 기록
+        <div class="mb-3 mb-md-4 d-flex justify-content-between">
+            <div class="h3 mb-0">{{request.user}}님의 측정 기록</div>
         </div>
 
-    </div>
-    <div class="photo">
-
-        <h3 class="h4 font-weight-semi-bold text-uppercase mb-0">최근 사진</h3>
-            <img src="data:image/jpg;base64,{{recent.basic_img}}" width="200px">
-            <img src="data:image/jpg;base64,{{recent.outline_img}}" width="200px">
-            <img src="data:image/jpg;base64,{{recent.joint_img}}" width="200px">
-            <p></p>
-    </div>
-
-
-    <div class="row">
-        <div class="col-md-6 col-xl-4 mb-3 mb-md-4">
-            <!-- Card -->
-            <div class="card h-100">
-                <div class="card-header d-flex">
-                    <h3 class="h4 font-weight-semi-bold text-uppercase mb-0">측정</h3>
-                </div>
-                <div class="card-body p-0">
-                    <div class="media align-items-center px-3 px-md-4 mb-3 mb-md-4">
-                        <div class="media-body">
-                            <h4 class="h3 lh-1 mb-2">면적 : {{ recent.outline_area}}</h4>
-                            <p class="small text-muted mb-0"> Today
-                            </p>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-            <!-- End Card -->
-
-
+        <div class="photo">
+            <h3 class="h4 font-weight-semi-bold text-uppercase mb-0">최근 사진</h3>
+                <img src="data:image/jpg;base64,{{recent.basic_img}}" width="200px">
+                <img src="data:image/jpg;base64,{{recent.outline_img}}" width="200px">
+                <img src="data:image/jpg;base64,{{recent.joint_img}}" width="200px">
         </div>
 
-        <div class="col-md-6 col-xl-4 mb-3 mb-md-4">
-            <!-- Card -->
-            <div class="card h-100">
-                <div class="card-header d-flex">
-                    <h5 class="h4 font-weight-semi-bold text-uppercase mb-0">촬영 날짜</h5>
-                </div>
-                <div class="card-body p-0">
-                    <div class="media align-items-center px-3 px-md-4 mb-3 mb-md-4">
-                        <div class="media-body">
-                            <h4 class="h3 lh-1 mb-2">최근 촬영일 : {{ recent.date }}</h4>
-                            <p class="small text-muted mb-0">Date
-                            </p>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-xl-4 mb-3 mb-md-4">
-            <div class="card h-100">
+        <div class="row">
+            <div class="col-md-6 col-xl-4 mb-3 mb-md-4">
+                <!-- Card -->
+                <div class="card h-100">
                     <div class="card-header d-flex">
-                        <h3 class="h4 font-weight-semi-bold text-uppercase mb-0">처음과의 차이</h3>
+                        <h3 class="h4 font-weight-semi-bold text-uppercase mb-0">측정</h3>
                     </div>
-                <div class="card-body p-0">
+                    <div class="card-body p-0">
                         <div class="media align-items-center px-3 px-md-4 mb-3 mb-md-4">
                             <div class="media-body">
-                                <h4 class="h3 lh-1 mb-2">변화 </h4>
-                                <p class="small text-muted mb-0"> Change
+                                <h4 class="h3 lh-1 mb-2">면적 : {{ recent.outline_area}}</h4>
+                                <p class="small text-muted mb-0"> Today
                                 </p>
                             </div>
                         </div>
-
-
+                    </div>
                 </div>
-                 <div class="js-area-chart chart chart--axis-x chart--points-invisible position-relative chart--labels-hidden"
-                            data-series='[
-                        [
-                        {"meta":"Orders","value":"{{ first.outline_area }}"},
-                        {"meta":"Orders","value":"{{ recent.outline_area }}"}
-                        ]
-                    ]'
-                            data-height="100"
-                            data-high="700000"
-                            data-is-line-smooth='[false]'
-                            data-line-width='["1px"]'
-                            data-line-colors='["#8069f2"]'
-                            data-fill-opacity=".3"
-                            data-is-fill-colors-gradient="true"
-                            data-fill-colors='[
-                        ["rgba(128,105,242,.7)","rgba(255,255,255,.6)"]
-                    ]'
-                            data-is-show-tooltips="true"
-                            data-is-tooltips-append-to-body="true"
-                            data-tooltip-custom-class="chart-tooltip chart-tooltip--sections-blocked chart-tooltip__meta--text-muted small text-white p-2"
-                            data-tooltip-currency="Qty "
-                            data-is-show-points="true"
-                            data-point-custom-class='chart__point--donut chart__point--border-xxs border-primary rounded-circle'
-                            data-point-dimensions='{"width":8,"height":8}'></div>
-
-                </div>
+                <!-- End Card -->
             </div>
-        </div>
 
-
-    </div>
-
-
-
-        <div class="col-12">
-            <div class="card mb-3 mb-md-4">
-                <div class="card-header">
-                    <h3 class="font-weight-semi-bold mb-0">면적 기록</h3>
-                </div>
-
-                <div class="card-body pt-0">
-                    <div class="table-responsive-xl">
-                        <table class="table text-nowrap mb-0">
-                            <thead>
-                            <tr>
-                                <th class="font-weight-semi-bold border-top-0 py-2">측정 날짜</th>
-                                <th class="font-weight-semi-bold border-top-0 py-2">면적</th>
-                                <th class="font-weight-semi-bold border-top-0 py-2">Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-
-                                    <td class="py-3">{{ recent.date }}</td>
-                                    <td class="py-3">
-                                    <div>{{ recent.outline_area }}</div>
-                                    </td>
-
-                                <!--<td class="py-3">
-                                    <span class="badge badge-pill badge-warning">유지</span>
-                                </td>-->
-                                <td class="py-3">
-                                    <div class="position-relative">
-                                        <a id="dropDown16Invoker" class="link-dark d-flex" href="#" aria-controls="dropDown16" aria-haspopup="true" aria-expanded="false" data-unfold-target="#dropDown16" data-unfold-event="click" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
-                                            <i class="gd-more-alt icon-text"></i>
-                                        </a>
-
-                                        <ul id="dropDown16" class="unfold unfold-light unfold-top unfold-right position-absolute py-3 mt-1 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="dropDown16Invoker" style="min-width: 150px; animation-duration: 300ms; right: 0px;">
-                                            <li class="unfold-item">
-                                                <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                    <i class="gd-pencil unfold-item-icon mr-3"></i>
-                                                    <span class="media-body">Edit</span>
-                                                </a>
-                                            </li>
-                                            <li class="unfold-item">
-                                                <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                    <i class="gd-close unfold-item-icon mr-3"></i>
-                                                    <span class="media-body">Delete</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-3">{{ first.date }}</td>
-                                <td class="py-3">
-                                    <div>{{ first.outline_area }}</div>
-                                </td>
-                                <!--<td class="py-3">
-                                    <span class="badge badge-pill badge-success">감소</span>
-                                </td>-->
-                                <td class="py-3">
-                                    <div class="position-relative">
-                                        <a id="dropDown15Invoker" class="link-dark d-flex" href="#" aria-controls="dropDown15" aria-haspopup="true" aria-expanded="false" data-unfold-target="#dropDown15" data-unfold-event="click" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
-                                            <i class="gd-more-alt icon-text"></i>
-                                        </a>
-                                        <ul id="dropDown15" class="unfold unfold-light unfold-top unfold-right position-absolute py-3 mt-1 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="dropDown15Invoker" style="min-width: 150px; animation-duration: 300ms; right: 0px;">
-                                            <li class="unfold-item">
-                                                <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                    <i class="gd-pencil unfold-item-icon mr-3"></i>
-                                                    <span class="media-body">Edit</span>
-                                                </a>
-                                            </li>
-                                            <li class="unfold-item">
-                                                <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                    <i class="gd-close unfold-item-icon mr-3"></i>
-                                                    <span class="media-body">Delete</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            </tbody>
-                        </table>
+            <div class="col-md-6 col-xl-4 mb-3 mb-md-4">
+                <!-- Card -->
+                <div class="card h-100">
+                    <div class="card-header d-flex">
+                        <h5 class="h4 font-weight-semi-bold text-uppercase mb-0">촬영 날짜</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="media align-items-center px-3 px-md-4 mb-3 mb-md-4">
+                            <div class="media-body">
+                                <h4 class="h3 lh-1 mb-2">최근 촬영일 : {{ recent.date }}</h4>
+                                <p class="small text-muted mb-0">Date</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-md-6 col-xl-4 mb-3 mb-md-4">
+                <div class="card h-100">
+                        <div class="card-header d-flex">
+                            <h3 class="h4 font-weight-semi-bold text-uppercase mb-0">처음과의 차이</h3>
+                        </div>
+                    <div class="card-body p-0">
+                            <div class="media align-items-center px-3 px-md-4 mb-3 mb-md-4">
+                                <div class="media-body">
+                                    <h4 class="h3 lh-1 mb-2">변화 </h4>
+                                    <p class="small text-muted mb-0"> Change</p>
+                                </div>
+                            </div>
+                    </div>
+
+                     <div class="js-area-chart chart chart--axis-x chart--points-invisible position-relative chart--labels-hidden"
+                                data-series='[
+                            [
+                            {"meta":"Orders","value":"{{ first.outline_area }}"},
+                            {"meta":"Orders","value":"{{ recent.outline_area }}"}
+                            ]
+                        ]'
+                                data-height="100"
+                                data-high="700000"
+                                data-is-line-smooth='[false]'
+                                data-line-width='["1px"]'
+                                data-line-colors='["#8069f2"]'
+                                data-fill-opacity=".3"
+                                data-is-fill-colors-gradient="true"
+                                data-fill-colors='[
+                            ["rgba(128,105,242,.7)","rgba(255,255,255,.6)"]
+                        ]'
+                                data-is-show-tooltips="true"
+                                data-is-tooltips-append-to-body="true"
+                                data-tooltip-custom-class="chart-tooltip chart-tooltip--sections-blocked chart-tooltip__meta--text-muted small text-white p-2"
+                                data-tooltip-currency="Qty "
+                                data-is-show-points="true"
+                                data-point-custom-class='chart__point--donut chart__point--border-xxs border-primary rounded-circle'
+                                data-point-dimensions='{"width":8,"height":8}'>
+                     </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="col-12">
+        <div class="card mb-3 mb-md-4">
+            <div class="card-header">
+                <h3 class="font-weight-semi-bold mb-0">면적 기록</h3>
+            </div>
+
+            <div class="card-body pt-0">
+                <div class="table-responsive-xl">
+                    <table class="table text-nowrap mb-0">
+                        <thead>
+                        <tr>
+                            <th class="font-weight-semi-bold border-top-0 py-2">측정 날짜</th>
+                            <th class="font-weight-semi-bold border-top-0 py-2">면적</th>
+                            <th class="font-weight-semi-bold border-top-0 py-2">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td class="py-3">{{ recent.date }}</td>
+                                <td class="py-3">
+                                    <div>{{ recent.outline_area }}</div>
+                                </td>
+                            <!--<td class="py-3">
+                                <span class="badge badge-pill badge-warning">유지</span>
+                            </td>-->
+                            <td class="py-3">
+                                <div class="position-relative">
+                                    <a id="dropDown16Invoker" class="link-dark d-flex" href="#" aria-controls="dropDown16" aria-haspopup="true" aria-expanded="false" data-unfold-target="#dropDown16" data-unfold-event="click" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
+                                        <i class="gd-more-alt icon-text"></i>
+                                    </a>
+
+                                    <ul id="dropDown16" class="unfold unfold-light unfold-top unfold-right position-absolute py-3 mt-1 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="dropDown16Invoker" style="min-width: 150px; animation-duration: 300ms; right: 0px;">
+                                        <li class="unfold-item">
+                                            <a class="unfold-link media align-items-center text-nowrap" href="#">
+                                                <i class="gd-pencil unfold-item-icon mr-3"></i>
+                                                <span class="media-body">Edit</span>
+                                            </a>
+                                        </li>
+                                        <li class="unfold-item">
+                                            <a class="unfold-link media align-items-center text-nowrap" href="#">
+                                                <i class="gd-close unfold-item-icon mr-3"></i>
+                                                <span class="media-body">Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">{{ first.date }}</td>
+                            <td class="py-3">
+                                <div>{{ first.outline_area }}</div>
+                            </td>
+                            <!--<td class="py-3">
+                                <span class="badge badge-pill badge-success">감소</span>
+                            </td>-->
+                            <td class="py-3">
+                                <div class="position-relative">
+                                    <a id="dropDown15Invoker" class="link-dark d-flex" href="#" aria-controls="dropDown15" aria-haspopup="true" aria-expanded="false" data-unfold-target="#dropDown15" data-unfold-event="click" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
+                                        <i class="gd-more-alt icon-text"></i>
+                                    </a>
+                                    <ul id="dropDown15" class="unfold unfold-light unfold-top unfold-right position-absolute py-3 mt-1 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="dropDown15Invoker" style="min-width: 150px; animation-duration: 300ms; right: 0px;">
+                                        <li class="unfold-item">
+                                            <a class="unfold-link media align-items-center text-nowrap" href="#">
+                                                <i class="gd-pencil unfold-item-icon mr-3"></i>
+                                                <span class="media-body">Edit</span>
+                                            </a>
+                                        </li>
+                                        <li class="unfold-item">
+                                            <a class="unfold-link media align-items-center text-nowrap" href="#">
+                                                <i class="gd-close unfold-item-icon mr-3"></i>
+                                                <span class="media-body">Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
