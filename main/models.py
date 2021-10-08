@@ -3,6 +3,7 @@ from django.db import models
 
 class Question(models.Model):
     subject = models.CharField(max_length=200)
+    writer = models.CharField(max_length=20)
     content = models.TextField()
     create_date = models.DateTimeField()
 
@@ -12,5 +13,6 @@ class Question(models.Model):
 
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    writer = models.CharField(max_length=20)
     content = models.TextField()
     create_date = models.DateTimeField()

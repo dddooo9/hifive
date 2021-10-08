@@ -31,7 +31,7 @@
                         <span class="text-danger small ml-2">{{ question.answer_set.count }}</span>
                     {% endif %}
                 </td>
-                <td></td>
+                <td>{{ question.writer }}</td>
                 <td>{{ question.create_date }}</td>
             </tr>
         {% endfor %}

@@ -23,6 +23,7 @@ def question_create(request):
         form = QuestionForm(request.POST)
         if form.is_valid():
             question = form.save(commit=False)
+            question.writer = request.user
             question.create_date = timezone.now()
             question.save()
             return redirect('main:paging')
@@ -42,6 +43,7 @@ def answer_create(request, question_id):
         if form.is_valid():
             answer = form.save(commit=False)
             answer.create_date = timezone.now()
+            answer.writer = request.user
             answer.question = question
             answer.save()
             return redirect('main:detail', question_id=question.id)
