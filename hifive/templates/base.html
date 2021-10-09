@@ -30,26 +30,18 @@
         <div class="navbar-brand-wrapper d-flex align-items-center col-auto">
             <!-- Logo For Mobile View -->
             <a class="navbar-brand navbar-brand-mobile" href="/">
-                <img class="img-fluid w-100" src="{% static 'public/img/logo-mini.png' %}" alt="Graindashboard" style="max-width:100%; height:auto;">
+                <img class="img-fluid w-100" src="{% static 'public/img/nbm.png' %}" alt="Graindashboard" style="max-width:100%; height:auto;">
             </a>
             <!-- End Logo For Mobile View -->
-
             <!-- Logo For Desktop View -->
             <a class="navbar-brand navbar-brand-desktop" href="/">
-<!--                <img class="side-nav-show-on-closed" src="{% static 'public/img/logo-mini.png' %}" alt="Graindashboard" style="width: auto; height: 33px;">-->
-
-                <div>
                     <img class="logo-img" src="{% static 'public/img/nbm.png' %}" alt="Graindashboard"
                     style="width: 70px; height: 70px; float: left; max-width:100%; height:auto;">
-                    <p class = "logo-title">
-                        눈바디스마트미러
-                    </p>
-                </div>
             </a>
             <!-- End Logo For Desktop View -->
         </div>
 
-        <div class="header-content col px-md-3" style="margin-left: 210px">
+        <div class="header-content col px-md-3">
             <div class="d-flex align-items-center">
                 <!-- Side Nav Toggle -->
                 <a  class="js-side-nav header-invoker d-flex mr-md-2" href="#"
@@ -58,8 +50,8 @@
                     data-target-wrapper="body">
                     <i class="gd-align-left"></i>
                 </a>
+                
                 <!-- End Side Nav Toggle -->
-
                 {% if user.is_authenticated %}
                 <!-- User Avatar -->
                 <div class="dropdown mx-3 dropdown ml-2">
