@@ -9,6 +9,9 @@
             <div class="h3 mb-0">{{request.user}}님의 측정 기록</div>
         </div>
 
+        {% if not cameras %}
+            <h3 class="h4 font-weight-semi-bold text-uppercase mb-0">아직 측정한 기록이 없습니다.</h3>
+        {% else %}
         <div class="photo">
             <h3 class="h4 font-weight-semi-bold text-uppercase mb-0">최근 사진</h3>
                 <img src="data:image/jpg;base64,{{recent.basic_img}}" width="200px">
@@ -109,77 +112,28 @@
                         <tr>
                             <th class="font-weight-semi-bold border-top-0 py-2">측정 날짜</th>
                             <th class="font-weight-semi-bold border-top-0 py-2">면적</th>
-                            <th class="font-weight-semi-bold border-top-0 py-2">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
+                            {% for camera in cameras %}
                         <tr>
-                                <td class="py-3">{{ recent.date }}</td>
+                                <td class="py-3">{{ camera.date }}</td>
                                 <td class="py-3">
-                                    <div>{{ recent.outline_area }}</div>
+                                    <div>{{ camera.outline_area }}</div>
                                 </td>
                             <!--<td class="py-3">
                                 <span class="badge badge-pill badge-warning">유지</span>
                             </td>-->
-                            <td class="py-3">
-                                <div class="position-relative">
-                                    <a id="dropDown16Invoker" class="link-dark d-flex" href="#" aria-controls="dropDown16" aria-haspopup="true" aria-expanded="false" data-unfold-target="#dropDown16" data-unfold-event="click" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
-                                        <i class="gd-more-alt icon-text"></i>
-                                    </a>
-
-                                    <ul id="dropDown16" class="unfold unfold-light unfold-top unfold-right position-absolute py-3 mt-1 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="dropDown16Invoker" style="min-width: 150px; animation-duration: 300ms; right: 0px;">
-                                        <li class="unfold-item">
-                                            <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                <i class="gd-pencil unfold-item-icon mr-3"></i>
-                                                <span class="media-body">Edit</span>
-                                            </a>
-                                        </li>
-                                        <li class="unfold-item">
-                                            <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                <i class="gd-close unfold-item-icon mr-3"></i>
-                                                <span class="media-body">Delete</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
                         </tr>
-                        <tr>
-                            <td class="py-3">{{ first.date }}</td>
-                            <td class="py-3">
-                                <div>{{ first.outline_area }}</div>
-                            </td>
-                            <!--<td class="py-3">
-                                <span class="badge badge-pill badge-success">감소</span>
-                            </td>-->
-                            <td class="py-3">
-                                <div class="position-relative">
-                                    <a id="dropDown15Invoker" class="link-dark d-flex" href="#" aria-controls="dropDown15" aria-haspopup="true" aria-expanded="false" data-unfold-target="#dropDown15" data-unfold-event="click" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
-                                        <i class="gd-more-alt icon-text"></i>
-                                    </a>
-                                    <ul id="dropDown15" class="unfold unfold-light unfold-top unfold-right position-absolute py-3 mt-1 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="dropDown15Invoker" style="min-width: 150px; animation-duration: 300ms; right: 0px;">
-                                        <li class="unfold-item">
-                                            <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                <i class="gd-pencil unfold-item-icon mr-3"></i>
-                                                <span class="media-body">Edit</span>
-                                            </a>
-                                        </li>
-                                        <li class="unfold-item">
-                                            <a class="unfold-link media align-items-center text-nowrap" href="#">
-                                                <i class="gd-close unfold-item-icon mr-3"></i>
-                                                <span class="media-body">Delete</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
 
                 </div>
             </div>
         </div>
+        {% endif %}
+        
     </div>
 </div>
 
