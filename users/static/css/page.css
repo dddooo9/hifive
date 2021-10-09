@@ -8,29 +8,17 @@ h2,h1{
     text-align: center;
     margin: 20px auto 30px auto;
 }
-.posture{
-    float:right;
+
+.photo_text{
+    margin-top: 50px;
 }
-.posture_img{
-    width: 70%; height: auto;
-}
-.physique{
-    float:right;
-    margin-right: 250px;
-}
-.physique_img{
-    width: 70%; height: auto;
-}
+
 .table{
-    width: 400px;
+    width: 600px;
     font-size: 15px;
     margin-top: 20px;
 }
 
-.table{
-    margin-right: 100px;
-    margin-top: 10px
-}
 img{
     width: 150px;
 }
