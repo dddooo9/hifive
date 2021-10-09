@@ -1,6 +1,10 @@
 .main{
     flex-direction: column;
 }
+.entry-table{
+    float:left;
+    margin-left: 120px;
+}
 div{
     margin:auto;
 }
@@ -31,8 +35,10 @@ img{
     margin: 50px auto 20px auto;
 }
 
-@media screen and (max-width:1250px){
-    .physique{
-        margin-right: 150px;
+@media screen and (max-width:550px){
+    .table{
+        width: 300px;
+        font-size: 10px;
+        margin-top: 20px;
     }
 }
