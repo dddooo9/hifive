@@ -7,8 +7,8 @@ import base64
 
 # Create your views here.
 def exercise(request):
-    profile = Profile.objects.get(user = request.user)
-    cameras = Camera.objects.filter(user = request.user)
+    profile = Profile.objects.get(user=request.user)
+    cameras = Camera.objects.filter(user=request.user)
     length = len(cameras)
     recent = cameras.last()
     first = cameras.first()
@@ -21,5 +21,15 @@ def exercise(request):
     }
     return render(request, 'users/exercise.html', context)
 
-def mypage(request) :
-    return render(request, 'users/mypage.html')
+
+def mypage(request):
+    cameras = Camera.objects.filter(user=request.user)
+    length = len(cameras)
+    recent = cameras.last()
+    first = cameras.first()
+    context = {
+        'cameras': cameras,
+        'recent': recent,
+        'first': first,
+    }
+    return render(request, 'users/mypage.html',context)

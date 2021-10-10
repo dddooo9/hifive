@@ -1,6 +1,10 @@
 .main{
     flex-direction: column;
 }
+.entry-table{
+    float:left;
+    margin-left: 120px;
+}
 div{
     margin:auto;
 }
@@ -8,29 +12,17 @@ h2,h1{
     text-align: center;
     margin: 20px auto 30px auto;
 }
-.posture{
-    float:right;
+
+.photo_text{
+    margin-top: 50px;
 }
-.posture_img{
-    width: 70%; height: auto;
-}
-.physique{
-    float:right;
-    margin-right: 250px;
-}
-.physique_img{
-    width: 70%; height: auto;
-}
+
 .table{
-    width: 400px;
+    width: 600px;
     font-size: 15px;
     margin-top: 20px;
 }
 
-.table{
-    margin-right: 100px;
-    margin-top: 10px
-}
 img{
     width: 150px;
 }
@@ -43,8 +35,10 @@ img{
     margin: 50px auto 20px auto;
 }
 
-@media screen and (max-width:1250px){
-    .physique{
-        margin-right: 150px;
+@media screen and (max-width:550px){
+    .table{
+        width: 300px;
+        font-size: 10px;
+        margin-top: 20px;
     }
 }
